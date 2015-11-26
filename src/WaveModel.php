@@ -468,6 +468,7 @@ class WaveModel extends Model  {
                 $attrs,
                 $rules
             );
+            $validator->model = $this;
             if ($validator->fails()){
                 $this->errors = $validator->messages()->getMessages();
                 return false;
